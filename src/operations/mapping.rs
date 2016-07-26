@@ -34,13 +34,13 @@ use ::operations::GenericResult;
 pub type DocType<'a> = HashMap<&'a str, HashMap<&'a str, &'a str>>;
 pub type Mapping<'a> = HashMap<&'a str, DocType<'a>>;
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 pub struct Settings {
     pub number_of_shards: u32,
     pub analysis: Analysis
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 pub struct Analysis {
     pub filter:   BTreeMap<String, Value>,
     pub analyzer: BTreeMap<String, Value>
